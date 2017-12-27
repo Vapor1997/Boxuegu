@@ -264,3 +264,4 @@ public class ExercisesDetailAdapter extends BaseAdapter{
 
     }
 }
+//huang
