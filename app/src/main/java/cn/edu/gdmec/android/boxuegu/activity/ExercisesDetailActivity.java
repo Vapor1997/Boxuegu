@@ -23,7 +23,7 @@ import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
 
 public class ExercisesDetailActivity extends AppCompatActivity{
     private TextView tv_main_title;
-    private  TextView tv_back;
+    private TextView tv_back;
     private RelativeLayout rl_title_bar;
     private ListView lv_list;
     private  String title;

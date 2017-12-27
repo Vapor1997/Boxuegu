@@ -60,15 +60,15 @@ public class ExercisesDetailAdapter extends BaseAdapter{
         if(convertView == null){
             vh = new ViewHolder();
             convertView = LayoutInflater.from(mContext).inflate(R.layout.exercises_detail_list_item,null);
-            vh.subject=convertView.findViewById(R.id.tv_subject);
-            vh.tv_a= convertView.findViewById(R.id.tv_a);
-            vh.tv_b= convertView.findViewById(R.id.tv_b);
-            vh.tv_c= convertView.findViewById(R.id.tv_c);
-            vh.tv_d= convertView.findViewById(R.id.tv_d);
-            vh.iv_a = convertView.findViewById(R.id.iv_a);
-            vh.iv_b = convertView.findViewById(R.id.iv_b);
-            vh.iv_c = convertView.findViewById(R.id.iv_c);
-
+            vh.subject= (TextView)convertView.findViewById(R.id.tv_subject);
+            vh.tv_a = (TextView) convertView.findViewById(R.id.tv_a);
+            vh.tv_b = (TextView) convertView.findViewById(R.id.tv_b);
+            vh.tv_c = (TextView) convertView.findViewById(R.id.tv_c);
+            vh.tv_d = (TextView) convertView.findViewById(R.id.tv_d);
+            vh.iv_a = (ImageView) convertView.findViewById(R.id.iv_a);
+            vh.iv_b = (ImageView) convertView.findViewById(R.id.iv_b);
+            vh.iv_c = (ImageView) convertView.findViewById(R.id.iv_c);
+            vh.iv_d = (ImageView) convertView.findViewById(R.id.iv_d);
             convertView.setTag(vh);
         }else{
             vh=(ViewHolder) convertView.getTag();
