@@ -14,6 +14,7 @@ import java.util.List;
 
 import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.bean.ExercisesBean;
+import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
 
 
 /**
@@ -87,7 +88,9 @@ public class ExercisesDetailAdapter extends BaseAdapter{
             vh.iv_b.setImageResource(R.drawable.exercises_b);
             vh.iv_c.setImageResource(R.drawable.exercises_c);
             vh.iv_d.setImageResource(R.drawable.exercises_d);
+            AnalysisUtils.setABCDEnable(true,vh.iv_a,vh.iv_b,vh.iv_c,vh.iv_d);
         }else {
+            AnalysisUtils.setABCDEnable(true,vh.iv_a,vh.iv_b,vh.iv_c,vh.iv_d);
             switch (bean.select){
                 case 0:
                     if(bean.answer ==1){
