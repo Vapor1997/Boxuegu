@@ -39,7 +39,7 @@ public class DBUtils {
         db.insert(SQLiteHelper.U_USERINFO,null,cv);
     }
     public UserBean getUserInfo(String userName){
-        String sql="SELECT * FROM"+ SQLiteHelper.U_USERINFO+"WHERE userName=?";
+        String sql="SELECT * FROM "+SQLiteHelper.U_USERINFO+" WHERE userName=?";
         Cursor cursor=db.rawQuery(sql,new String[]{userName});
         UserBean bean=null;
         while (cursor.moveToNext()){
@@ -57,7 +57,7 @@ public class DBUtils {
         cv.put(key,value);
         db.update(SQLiteHelper.U_USERINFO,cv,"userName=?",new String[]{userName});
     }
-    public void saveVideoPlayList(VideoBean bean, String userName){
+    public void saveVideoPlayList(VideoBean bean,String userName){
         if (hasVideoPlay(bean.chapterId,bean.videoId,userName)){
             boolean isDelete=delVideoPlay(bean.chapterId,bean.videoId,userName);
             if (!isDelete){
@@ -75,7 +75,7 @@ public class DBUtils {
     }
     public boolean hasVideoPlay(int chapterId,int videoId,String userName){
         boolean hasVideo=false;
-        String sql="SELECT * FROM"+ SQLiteHelper.U_VIDEO_PLAY_LIST+"WHERE chapterId=? AND videoId=? AND userName=?";
+        String sql="SELECT * FROM "+SQLiteHelper.U_VIDEO_PLAY_LIST+" WHERE chapterId=? AND videoId=? AND userName=?";
         Cursor cursor=db.rawQuery(sql,new String[]{chapterId+"",videoId+"",userName});
         if (cursor.moveToFirst()){
             hasVideo=true;
@@ -93,7 +93,7 @@ public class DBUtils {
         return delSuccess;
     }
     public List<VideoBean> getVideoHistory(String userName){
-        String sql="SELECT * FROM"+ SQLiteHelper.U_VIDEO_PLAY_LIST+"WHERE userName=?";
+        String sql="SELECT * FROM "+SQLiteHelper.U_VIDEO_PLAY_LIST+" WHERE userName=?";
         Cursor cursor=db.rawQuery(sql,new String[]{userName});
         List<VideoBean> vbl=new ArrayList<VideoBean>();
         VideoBean bean=null;

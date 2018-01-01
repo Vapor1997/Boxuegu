@@ -77,7 +77,7 @@ public class SettingActivity extends AppCompatActivity{
     private void clearLoginStatus(){
         SharedPreferences sp=getSharedPreferences("lohinInfo", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sp.edit();
-        editor.putBoolean("isLoggin",false);
+        editor.putBoolean("isLogin",false);
         editor.putString("loginUserName","");
         editor.commit();
     }
