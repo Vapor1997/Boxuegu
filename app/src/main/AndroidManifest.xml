@@ -11,14 +11,23 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.ExercisesDetailActivity">
-        </activity>
+        <activity android:name=".activity.ExercisesDetailActivity"/>
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.UserInfoActivity" />
+        <activity android:name=".activity.PlayHistoryActivity" />
+        <activity android:name=".activity.ModifyPswActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.FindPswActivity" />
+        <activity android:name=".activity.ChangeUserInfoActivity" />
+        <activity android:name=".activity.VideoPlayActivity" />
+        <activity android:name=".activity.VideoListActivity"></activity>
     </application>
 
 </manifest>
