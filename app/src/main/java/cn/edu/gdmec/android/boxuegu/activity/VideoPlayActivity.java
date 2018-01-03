@@ -33,6 +33,7 @@ public class VideoPlayActivity extends AppCompatActivity{
         position=getIntent().getIntExtra("position",0);
         init();
     }
+    //
     private void init(){
         videoView=(VideoView) findViewById(R.id.videoView);
         controller=new MediaController(this);
