@@ -2,16 +2,19 @@ package cn.edu.gdmec.android.boxuegu.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.activity.ExercisesDetailActivity;
+import cn.edu.gdmec.android.boxuegu.activity.LoginActivity;
 import cn.edu.gdmec.android.boxuegu.bean.ExercisesBean;
 
 import static android.support.v7.appcompat.R.attr.title;
@@ -76,6 +79,7 @@ public class ExercisesAdapter extends BaseAdapter {
         convertView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                if(readLoginStatus()){
                 if(bean == null)
                     return;
 
@@ -85,11 +89,25 @@ public class ExercisesAdapter extends BaseAdapter {
 
                 intent.putExtra("title",bean.title);
                 mContext.startActivity(intent);
+                }else
+
+                {
+                    Toast.makeText(mContext, "您还未登录，请先登录",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(mContext, LoginActivity.class);
+                    mContext.startActivity(intent);
+                }
 
             }
+
+            
         });
         return  convertView;
 
+    }
+    private boolean readLoginStatus(){
+        SharedPreferences sp = mContext.getSharedPreferences("loginInfo",Context.MODE_PRIVATE);
+        boolean isLogin = sp.getBoolean("isLogin",false);
+        return isLogin;
     }
     class  ViewHolder{
         public  TextView title,content;
